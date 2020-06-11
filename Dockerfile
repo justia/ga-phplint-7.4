@@ -9,7 +9,7 @@ LABEL version="0.0.1"
 LABEL repository="https://github.com/justia/ga-phplint-7.4"
 LABEL homepage="https://github.com/justia/ga-phplint-7.4"
 
-RUN apt-get update && apt-get -y install zip unzip
+RUN apt-get update && apt-get -y install zip unzip && rm -rf /var/lib/apt/lists/*
 
 RUN curl -sS https://getcomposer.org/installer | php -- \
 --install-dir=/usr/bin --filename=composer && chmod +x /usr/bin/composer
